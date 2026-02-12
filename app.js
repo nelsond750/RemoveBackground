@@ -12,7 +12,7 @@ removeBtn.addEventListener("click", async() =>{
     const formaData = new FormData();
     formaData.append("file", file);
 
-    const response = await fetch("https://localhost:8000/remover-bg", {
+    const response = await fetch("https://console.cloud.google.com/run/services?project=background-remover-487110", {
         method: "POST",
         body:FormData,    
     });
