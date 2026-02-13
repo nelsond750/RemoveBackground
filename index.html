@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Background Remover</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -13,23 +15,45 @@
             </div>
    
 <div class="card">
-    <form idupload-form>
-        <div class="uploa-area" id="upload-area">
-        <input type="file" id="file-input" accept="image/png,image/jpeg,image/webp">
+    <form id="upload-form">
+      <div class="uploa-area" id="upload-area">
+        <input type="file" id="file-input" accept="image/png,image/jpg,iamge/webp" />  
+        <div class="upload-icon"></div>
+        <div class="upload-text" id="upload-text">Escolher uma imagem</div>
+        <div class="upload-hint">PNG, JPG, ou WEBP</div> 
+      </div>
+
+      <button type="submit" class="btn btn-primary" id="submit-btn" style="margin-top: 16px;">
+        Remover Imagem de fundo
+      </button>
+  
+    </form>
 </div>
-    <input type="file" id="imageIpunt" />
-    <button id="removeBtn">Remover Imagem de fundo</button>
-    <div class =result>
-        <img id="resultImage">
-    </div>
+<div class="card">
+  <div class="preview-container">
+  <div class="preview-wrapper">
+  <img id="original-image" class="preview-image" alt="Original" style="clip-path: inset(0 0 0 0);" />
+  <img id="processe-imge" class="preview-image" alt="Processed" />
+  <div class="preview-placeholder" id="preview-placeholder">
+    Nenhuma imagem selecionada
+  </div> 
+  </div>
+  </div>
 
-    <a id="downloadLink"> Download Image </a>
-    <div>
+<div class="slider-container hidden" id="slider-container">
+        <input type="range" min="0" max="100" value="100" class="slider" id="comparison-slider" />
+        <div class="slider-labels">
+          <span>Processo</span>
+          <span>Original</span>
+        </div>
+</div>
 
 
-
-    </div>
-    <script src="app.js"></script>
+  <button class="btn btn-secondary hidden" id="download.btn">
+    Dowload em formato PNG
+  </button>
+</div>
+</div>
 
     <footer class="footer">
     <div class="footer-content">
@@ -41,5 +65,6 @@
       </div>
     </div>
   </footer>
+  <script src="app.js"></script>
 </body>
 </html>
